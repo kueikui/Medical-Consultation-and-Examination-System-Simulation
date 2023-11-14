@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+   
+  <script src="setting.js"></script>
+  <script src="Cookie.js"></script> 
+  <script src="dateTime.js"></script> 
+  <script src="HTTP2024.js"></script>
+
+ <script>
+  //respiratoryRate.js
+
+  var jsonObj = 
+  {
+    "resourceType": "Observation",
+    "id": "obs-001",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/observation-category",
+            "code": "laboratory",
+            "display": "Laboratory"
+          }
+        ],
+        "text": "Laboratory"
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://loinc.org",
+          "code": "85329-1",
+          "display": "Breast cancer marker 1"
+        }
+      ],
+      "text": "Breast cancer marker 1,Cells.estrogen receptor/100 cells in Breast cancer specimen by Immune stain"
+    },
+    "subject": {
+      "reference": "Patient/patient-001"
+    },
+    "effectiveDateTime": "2023-10-20T09:15:00Z",
+    "valueQuantity": {
+      "value": 65,
+      "unit": "%",
+      "system": "http://unitsofmeasure.org",
+      "code": "%"
+    },
+    "component": [
+      {
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "LP247891-7",
+              "display": "Cells.estrogen receptor"
+            }
+          ]
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "10828004",
+              "display": "Positive"
+            }
+          ]
+        }
+      }
+    ],
+    "bodySite": {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "76752008",
+          "display": "Breast"
+        }
+      ]
+    },
+    "method": {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "444644009",
+          "display": "Immune stain"
+        }
+      ]
+    }
+  };
+	 
+  function postData()
+  { jsonObj.valueQuantity.value = parseFloat(document.getElementById("estrogen receptor/100 cells").value);
+    jsonObj.subject.reference = "Patient/"+document.getElementById("id").value;
+    jsonObj.effectiveDateTime = getFormattedTime();
+    var jsonStr = JSON.stringify(jsonObj);
+    alert(jsonStr);
+    var apiURL;
+    apiURL = FHIRrootURL  + "Observation";
+    // HTTPPostData( apiURL,jsonStr);
+    sendHttpPost(apiURL, jsonStr, callBack);
+  } 
+  function callBack(ret) {
+       console.log(ret);    
+       //alert(ret);
+       }
+</script>	
+ 
+</head>
+<body style="height: 780px">
+  <p>雌激素受體百分比</p>
+
+   請輸入patient id:<input type="text" id="id" />  <br/>
+   雌激素受體百分比: <input type="text" id="estrogen receptor/100 cells" />  <br/>
+   <input id="Button1" onclick="postData()"  type="button" value="postData" /><br/>
+</body>
+
+</html>
+
+  
+  

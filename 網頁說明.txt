@@ -1,0 +1,13 @@
+網頁說明
+Breast Estrogen是新增病人一筆observation
+
+postPatient可以在醫院新增新的病人
+
+getBundle可以取得醫院病人ID、姓名
+
+get2可以取得醫院病人ID、姓名、檢測時間
+
+hospital是簡單網頁統整，可以連結到上述網頁
+
+補充:getBundle是用醫院代碼下去搜尋，get2是用病人id去搜尋，會這樣做兩個是因為我observation沒有用display，會找不到病人姓名，所以多了一個可以用醫院代碼去找到病患姓名，也許之後再改善。
+
