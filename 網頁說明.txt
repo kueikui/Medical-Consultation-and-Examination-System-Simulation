@@ -1,13 +1,13 @@
 網頁說明
-Breast Estrogen是新增病人一筆observation
+Breast Estrogen是新增病人一筆observation  file:///C:/Users/user/Desktop/%E4%B8%89%E4%B8%8A/FHIR/110316104%20%E6%A1%82%E7%91%8B%E6%9D%89%20FHIR/Breast%20Estrogen.html
 
-postPatient可以在醫院新增新的病人
+postPatient可以在醫院新增新的病人  file:///C:/Users/user/Desktop/%E4%B8%89%E4%B8%8A/FHIR/110316104%20%E6%A1%82%E7%91%8B%E6%9D%89%20FHIR/postPatient.html
 
-getBundle可以取得醫院病人ID、姓名
+getBundle可以取得醫院病人ID、姓名  file:///C:/Users/user/Desktop/%E4%B8%89%E4%B8%8A/FHIR/110316104%20%E6%A1%82%E7%91%8B%E6%9D%89%20FHIR/getBundle.html
 
-get2可以取得醫院病人ID、姓名、檢測時間
+get2可以取得醫院病人ID、姓名、檢測時間  file:///C:/Users/user/Desktop/%E4%B8%89%E4%B8%8A/FHIR/110316104%20%E6%A1%82%E7%91%8B%E6%9D%89%20FHIR/get2.html
 
-hospital是簡單網頁統整，可以連結到上述網頁
+hospital是簡單網頁統整，可以連結到上述網頁  file:///C:/Users/user/Desktop/%E4%B8%89%E4%B8%8A/FHIR/110316104%20%E6%A1%82%E7%91%8B%E6%9D%89%20FHIR/hospital.html
 
 補充:getBundle是用醫院代碼下去搜尋，get2是用病人id去搜尋，會這樣做兩個是因為我observation沒有用display，會找不到病人姓名，所以多了一個可以用醫院代碼去找到病患姓名，也許之後再改善。
 
