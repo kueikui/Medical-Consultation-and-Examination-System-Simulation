@@ -11,3 +11,5 @@ hospital是簡單網頁統整，可以連結到上述網頁
 
 補充:getBundle是用醫院代碼下去搜尋，get2是用病人id去搜尋，會這樣做兩個是因為我observation沒有用display，會找不到病人姓名，所以多了一個可以用醫院代碼去找到病患姓名，也許之後再改善。
 
+醫院代碼:34597037     https://hapi.fhir.org/baseR4/Patient?organization=34597037
+櫃尾山病例碼:34599857  https://hapi.fhir.org/baseR4/Observation?subject=34599857
