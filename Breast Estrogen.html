@@ -98,7 +98,7 @@
     var jsonStr = JSON.stringify(jsonObj);
     alert(jsonStr);
     var apiURL;
-    apiURL = FHIRrootURL  + "Observation";
+    apiURL = FHIRrootURL  + "Observation?subject=" + id ;
     // HTTPPostData( apiURL,jsonStr);
     sendHttpPost(apiURL, jsonStr, callBack);
   } 
